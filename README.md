@@ -25,8 +25,8 @@ This project is designed as a part of a case study for Onedio. It includes vario
   env.example change to .env and configure file
   npm install
   npm run build
-  run cli command => node dist/src/cli/fetchdata.js
-  npm run test => Redis cache test
+  run cli command : node dist/src/cli/fetchdata.js
+  npm run test : Redis cache test
   project start on local: npm run dev / npm run start
   project start on docker: docker-compose up --build
 
@@ -36,7 +36,7 @@ This project is designed as a part of a case study for Onedio. It includes vario
 
 #### Example
 
-```http
+```
   GET /fixtures?league=Bundesliga&season=2018-2019&limit=15&page=1
   GET /fixtures?league=Premier League&season=2017-2018&limit=8&page=1
 ```
