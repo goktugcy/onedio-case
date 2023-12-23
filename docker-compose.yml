@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - '3001:3001'
+    depends_on:
+      - redis
+      - mongo
+    environment:
+      - REDIS_URL=redis://host.docker.internal:6379
+      - MONGO_URI=mongodb://host.docker.internal:27017/onediocase
+  redis:
+    image: 'redis:alpine'
+    ports:
+      - '6379:6379'
+  mongo:
+    image: 'mongo'
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  mongo-data:
