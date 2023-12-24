@@ -26,6 +26,7 @@ This project is designed as a part of a case study for Onedio. It includes vario
   npm install
   npm run build
   run cli command : node dist/src/cli/fetchdata.js
+  npm run dev 
   npm run test : Redis cache test
   project start on local: npm run dev / npm run start
   project start on docker: docker-compose up --build
