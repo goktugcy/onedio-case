@@ -10,16 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: install
-        run: npm install
-      - name: build
-        run: npm run build
-      - name: Run CLI Command
-        run: node dist/src/cli/fetchdata.js
       - uses: akhileshns/heroku-deploy@v3.12.14
-      with:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+        with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: 'onedio-case'
           heroku_email: 'goktugceyhan@gmail.com'
-          
