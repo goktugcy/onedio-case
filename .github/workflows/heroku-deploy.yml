@@ -15,11 +15,11 @@ jobs:
       - name: build
         run: npm run build
       - name: Run CLI Command
-      env:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
-        run:  node dist/src/cli/fetchdata.js
+        run: node dist/src/cli/fetchdata.js
       - uses: akhileshns/heroku-deploy@v3.12.14
-        with:
+      with:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: 'onedio-case'
           heroku_email: 'goktugceyhan@gmail.com'
+          
