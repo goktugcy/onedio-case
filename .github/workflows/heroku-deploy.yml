@@ -15,6 +15,8 @@ jobs:
       - name: build
         run: npm run build
       - name: Run CLI Command
+      env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
         run:  node dist/src/cli/fetchdata.js
       - uses: akhileshns/heroku-deploy@v3.12.14
         with:
